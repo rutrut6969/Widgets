@@ -1,0 +1,6 @@
+@import url(../login-pages/login.css);
+
+body {
+    background-image: url(../Assets/login-bg.png);
+    color: var(--white-color);
+}
