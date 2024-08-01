@@ -5,6 +5,34 @@ body {
     color: var(--white-color);
 }
 
+body,
+input,
+button {
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+    transition: all 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+p {
+    font-size: var(--small-fos);
+}
+
 .form__wrapper {
     position: relative;
     height: 100vh;
@@ -21,4 +49,87 @@ body {
     padding: 2.5rem 1.5rem;
     border-radius: 1rem;
     backdrop-filter: blur(8px);
+}
+
+.title {
+    text-align: center;
+    font-size: var(--h1-fos);
+    font-weight: var(--font-medium);
+    margin-bottom: 2rem;
+}
+
+.signup__inputs, .signup__box {
+    display: grid;
+}
+
+.signup__inputs {
+    row-gap: 1.75rem;
+    margin-bottom: 1.5rem;
+    height: 70%;
+}
+
+.login__icon, .signup__eye {
+    font-size: 1.25rem;
+}
+
+.signup__input {
+    width: 100%;
+    padding-block: .8rem;
+    background: none;
+    color: var(--white-color);
+    position: relative;
+    z-index: 1;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.signup__box {
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: 0.75rem;
+    border-bottom: 2px solid var(--white-color);
+}
+
+.signup__label {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-weight: var(--font-medium);
+    transition: top .3s, font-size .3s;
+}
+
+.signup__eye {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.signup__box:nth-child(2) input {
+    padding-right: 1.8rem;
+}
+
+.signup__button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--white-color);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+/* Input Focus move up label */
+.signup__input:focus + .signup__label {
+    top: -12px;
+    font-size: var(--small-fos);
+}
+
+/* Input Focus Sticky top label */
+.signup__input:not(:placeholder-shown).signup__input:not(:focus) + .signup__label {
+    top: -12px;
+    font-size: var(--small-fos);
 }

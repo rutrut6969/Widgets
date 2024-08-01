@@ -1,6 +1,129 @@
 @import url(../login-pages/login.css);
 
+body,
+input,
+button {
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+input, 
+button {
+    border: none;
+    outline: none;
+}
+
 body {
     background-image: url(../Assets/login-bg.png);
     color: var(--white-color);
+}
+
+.form__wrapper {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot__pass {
+    position: relative;
+    background-color: hsla(0, 0%, 10%, .1);
+    border: 2px solid var(--white-color);
+    margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: space-around;
+    height: 50%;
+    width: 80%;
+}
+.forgot__title {
+    text-align: center;
+    font-size: var(--h1-fos);
+    font-weight: var(--font-medium);
+    margin-bottom: 2rem;
+}
+
+.input__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.forgot__input {
+    border-bottom: 2px solid var(--white-color);
+    margin-left: 15px;
+    width: 100%;
+    padding-block: .8rem;
+    background: none;
+    color: var(--white-color);
+    position: relative;
+    z-index: 1;
+}
+
+.forgot__email {
+    position: relative;
+    width: 100%;
+    background: none;
+    color: var(--white-color);
+    font-family: var(--body-font);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+    text-align: center;
+    transition: all 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue
+}
+
+.forgot__submit {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--white-color);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+}
+
+.forgot__email-label{
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-weight: var(--font-medium);
+    transition: top .3s, font-size .3s;
+}
+
+.forgot__email:focus + .forgot__email-label {
+    top: -12px;
+    font-size: var(--small-fos);
+}
+
+.forgot__email:not(:placeholder-shown).forgot__email:not(:focus) + .forgot__email-label {
+    top: -12px;
+    font-size: var(--small-fos);
+}
+
+@media screen and (min-width: 576px) {
+    .form__wrapper {
+        justify-content: center;
+    }
+    .forgot__pass {
+        width: 432px;
+        padding: 4rem 3rem 3.5rem;
+        border-radius: 1.5rem;
+    }
+    .forgot__title {
+        font-size: 2rem;
+    }
 }
